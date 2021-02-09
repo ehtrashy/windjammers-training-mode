@@ -71,6 +71,10 @@ function readMemoryAddresses()
 	p2.throwtimer = rb(0x1008bb) 
 end
 
+function printmemvalues()
+	print(rb)
+end
+
 function setToPlayer()
 	if rb(0x100a28) == 255 then -- throw direction I think. Don't write to this
 		ww(0x100a06, p1.x)
@@ -190,6 +194,7 @@ function Run()
 	infiniteTime()
 	zerop1Score()
 	zerop2Score()
+	printmemvalues()
 	
 	gui.text(p1.x-26, p1.y+10,"x:"..p1.x)
 	gui.text(p1.x-4, p1.y+10,"y:"..p1.y)
